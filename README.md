@@ -7,7 +7,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Builder
 - [ ] Factory Method
 - [ ] Prototype
-- [ ] Singleton
+- [X] Singleton
 
 ## Structural Patterns
 - [ ] Adapter
