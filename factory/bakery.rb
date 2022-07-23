@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'factories/biscuit_factory'
+require_relative 'factories/scone_factory'
 
-biscuit_factory = BiscuitFactory.new
+biscuit_maker = BiscuitFactory.new
+scone_maker = SconeFactory.new
 
-biscuit = biscuit_factory.make_food
+scones = (1..10).map { scone_maker.make_food }
+biscuits = (1..10).map { biscuit_maker.make_food }
 
-p biscuit.knead_dough
+p scones, biscuits

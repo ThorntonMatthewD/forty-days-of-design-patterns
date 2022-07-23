@@ -12,8 +12,6 @@ class SconeFactory < BaseBakedGoodFactory
     process_dough
     bake_dough
 
-    icing_request ? ice_scone : nil
-
     @scone
   end
 
@@ -33,9 +31,5 @@ class SconeFactory < BaseBakedGoodFactory
 
   def bake_dough
     @scone.bake_scone
-  end
-
-  def ice_scone
-    'Applied icing to scone'
   end
 end
