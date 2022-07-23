@@ -13,9 +13,9 @@ class Bakery
   def prepare_goods(baked_good_type)
     case baked_good_type
     when 'Scone'
-      (1..10).map { scone_maker.make_food }
+      (1..13).map { @scone_maker.make_food }
     when 'Biscuit'
-      (1..10).map { biscuit_maker.make_food }
+      (1..13).map { @biscuit_maker.make_food }
     else
       raise 'Baked good type provided is invalid'
     end

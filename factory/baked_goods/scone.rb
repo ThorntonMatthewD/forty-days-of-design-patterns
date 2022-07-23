@@ -28,7 +28,7 @@ class Scone < BakedGood
     'Dough has been rolled out'
   end
 
-  def cut_biscuit
+  def cut_scone
     'Dough has been cut into triangles'
   end
 
