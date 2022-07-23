@@ -5,7 +5,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 ## Creational Patterns
 - [ ] Abstract Factory
 - [ ] Builder
-- [ ] Factory Method
+- [X] Factory Method
 - [ ] Prototype
 - [X] Singleton
 
