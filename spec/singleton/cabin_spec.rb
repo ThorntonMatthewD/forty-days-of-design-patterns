@@ -4,7 +4,7 @@ require 'rspec'
 
 require File.expand_path('../../singleton/cabin', __dir__)
 
-describe Cabin do
+describe 'Cabin - Singleton' do
   it 'Cabin includes Singleton module' do
     expect(Cabin.ancestors.include?(Singleton)).to eq true
   end

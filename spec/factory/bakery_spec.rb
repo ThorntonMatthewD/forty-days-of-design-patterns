@@ -4,7 +4,7 @@ require 'rspec'
 
 require File.expand_path('../../factory/bakery', __dir__)
 
-describe Bakery do
+describe 'Bakery - Factory' do
   subject { Bakery.new.prepare_goods(baked_good_type) }
 
   context 'Ordering scones' do
