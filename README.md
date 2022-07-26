@@ -14,7 +14,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Adapter
 - [ ] Bridge
 - [ ] Composite
-- [ ] Decorator
+- [X] Decorator
 - [ ] Facade
 - [ ] Flyweight
 - [ ] Proxy
