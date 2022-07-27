@@ -8,7 +8,12 @@ class LinkedList
 
   def add_element(val)
     if @head
-      locate_tail.next = Node.new(val)
+      tail = locate_tail
+
+      new_node = Node.new(val)
+      new_node.p_node = tail
+
+      tail.n_node = new_node
     else
       @head = Node.new(val)
     end
@@ -17,10 +22,10 @@ class LinkedList
   def locate_tail
     node = @head
 
-    return node unless node.next
+    return node unless node.n_node
 
-    while (node = node.next)
-      return node unless node.next
+    while (node = node.n_node)
+      return node unless node.n_node
     end
   end
 end
