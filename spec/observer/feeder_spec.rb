@@ -29,7 +29,7 @@ describe 'Feeder - Observer' do
     expect(@pre_feeding_excitement_counts).to eq [cat.times_excited, dog.times_excited, guinea_pig.times_excited]
   end
 
-  it 'at the sound of chicken opening the cat and the dog are thrilled' do
+  it 'at the sound of a can of chicken opening the cat and the dog are thrilled' do
     subject.get_out_food('chicken')
 
     expect([cat.times_excited, dog.times_excited, guinea_pig.times_excited]).to eq [
