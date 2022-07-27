@@ -8,3 +8,7 @@ group :test do
   gem 'rspec', '~> 3.11'
   gem 'rubocop', '~> 1.31'
 end
+
+group :development do
+  gem 'solargraph', '~> 0.45.0'
+end
