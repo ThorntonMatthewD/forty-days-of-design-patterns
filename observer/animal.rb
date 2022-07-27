@@ -2,6 +2,8 @@
 
 # An animal that likes a specific type of food
 class Animal
+  attr_accessor :times_excited
+
   def initialize
     @times_excited = 0
   end
