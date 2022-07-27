@@ -7,15 +7,14 @@ class LinkedList
   end
 
   def add_element(val)
+    new_node = Node.new(val)
+
     if @head
       tail = locate_tail
-
-      new_node = Node.new(val)
-      new_node.previous_node = tail
-
       tail.next_node = new_node
+      new_node.previous_node = tail
     else
-      @head = Node.new(val)
+      @head = new_node
     end
   end
 
