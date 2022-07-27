@@ -48,6 +48,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.19.1)
       parser (>= 3.1.1.0)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.11.0)
     solargraph (0.45.0)
       backport (~> 1.2)
@@ -77,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   rspec (~> 3.11)
   rubocop (~> 1.31)
+  rubocop-rspec (~> 2.12)
   solargraph (~> 0.45.0)
 
 RUBY VERSION
