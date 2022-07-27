@@ -26,8 +26,6 @@ end
 # Converts the binary in our data store to hex
 class HexadecimalStorage < StorageDecorator
   def retrieve_data
-    @data_store.retrieve_data.map do |d|
-      d.to_s(16)
-    end
+    @data_store.retrieve_data.map { |d| d.to_s(16) }
   end
 end
