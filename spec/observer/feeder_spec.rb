@@ -39,7 +39,7 @@ describe 'Feeder - Observer' do
     ]
   end
 
-  it 'a crinkling of a bag of lettuces sends the guinea pig and dog into a frenzy' do
+  it 'a crinkling of a bag of lettuce sends the guinea pig and dog into a frenzy' do
     subject.get_out_food('lettuce')
 
     expect([cat.times_excited, dog.times_excited, guinea_pig.times_excited]).to eq [
