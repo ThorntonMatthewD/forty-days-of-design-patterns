@@ -26,7 +26,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Iterator
 - [ ] Mediator
 - [ ] Memento
-- [ ] Observer
+- [X] Observer
 - [ ] State
 - [ ] Strategy
 - [ ] Template Method
