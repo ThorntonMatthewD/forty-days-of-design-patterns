@@ -11,9 +11,9 @@ class LinkedList
       tail = locate_tail
 
       new_node = Node.new(val)
-      new_node.p_node = tail
+      new_node.previous_node = tail
 
-      tail.n_node = new_node
+      tail.next_node = new_node
     else
       @head = Node.new(val)
     end
@@ -22,22 +22,22 @@ class LinkedList
   def locate_tail
     node = @head
 
-    return node unless node.n_node
+    return node unless node.next_node
 
-    while (node = node.n_node)
-      return node unless node.n_node
+    while (node = node.next_node)
+      return node unless node.next_node
     end
   end
 end
 
 # A node for use in the linked list
 class Node
-  attr_accessor :n_node, :p_node
+  attr_accessor :next_node, :previous_node
   attr_reader :value
 
   def initialize(val)
-    @n_node = nil
-    @p_node = nil
+    @next_node = nil
+    @previous_node = nil
     @val = val
   end
 end
