@@ -23,7 +23,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Chain of Responsibility
 - [ ] Command
 - [ ] Interpreter
-- [ ] Iterator
+- [X] Iterator
 - [ ] Mediator
 - [ ] Memento
 - [X] Observer
