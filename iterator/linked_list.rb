@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'iterator'
+require_relative 'linked_list_iterator'
 
 # A doubly linked list
 class LinkedList
