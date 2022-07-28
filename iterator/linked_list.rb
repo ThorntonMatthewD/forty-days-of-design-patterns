@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
+require_relative 'iterator'
+
 # A doubly linked list
 class LinkedList
   def initialize
     @head = nil
   end
 
-  def add_element(val)
-    new_node = Node.new(val)
+  def add_element(value)
+    new_node = Node.new(value)
 
     if @head
       tail = locate_tail
@@ -27,6 +29,10 @@ class LinkedList
       return node unless node.next_node
     end
   end
+
+  def iterator
+    LinkedListIterator.new(@head)
+  end
 end
 
 # A node for use in the linked list
@@ -34,9 +40,9 @@ class Node
   attr_accessor :next_node, :previous_node
   attr_reader :value
 
-  def initialize(val)
+  def initialize(value)
     @next_node = nil
     @previous_node = nil
-    @val = val
+    @value = value
   end
 end
