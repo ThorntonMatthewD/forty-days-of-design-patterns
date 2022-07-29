@@ -30,7 +30,7 @@ class DragonSlayer < Warrior
     if dragon.alive?
       super(dragon)
     else
-      "I, #{name}, hath slain the foul beast! Quest complete!"
+      "I, #{@name}, hath slain the foul beast! Quest complete!"
     end
   end
 end
