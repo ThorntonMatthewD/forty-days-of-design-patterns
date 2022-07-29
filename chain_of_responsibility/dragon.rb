@@ -2,7 +2,7 @@
 
 # A fearsome, scaled beast! Beware!!
 class Dragon
-  def initialize(power_level=9001)
+  def initialize(power_level = 9001)
     @power_level = power_level
     @alive = true
     @challengers_faced = 0
