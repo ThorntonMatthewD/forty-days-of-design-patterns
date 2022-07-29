@@ -20,7 +20,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Proxy
 
 ## Behavioral Patterns
-- [ ] Chain of Responsibility
+- [X] Chain of Responsibility
 - [ ] Command
 - [ ] Interpreter
 - [X] Iterator
