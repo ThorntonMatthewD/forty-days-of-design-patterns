@@ -2,6 +2,8 @@
 
 # A fearsome, scaled beast! Beware!!
 class Dragon
+  attr_reader :challengers_faced
+
   def initialize(power_level = 9001)
     @power_level = power_level
     @alive = true
