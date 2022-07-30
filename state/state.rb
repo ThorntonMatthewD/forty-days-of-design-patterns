@@ -4,6 +4,10 @@
 class State
   attr_accessor :context
 
+  def name
+    raise NotImplementedError
+  end
+
   def respond_to_food
     raise NotImplementedError
   end
@@ -19,6 +23,10 @@ end
 
 # Sleepy kitty!
 class Sleepy < State
+  def name
+    'Sleepy'
+  end
+
   def respond_to_food
     'Penelope is too tired to chew.'
   end
@@ -35,6 +43,10 @@ end
 
 # Must. Kill. Bee.
 class Playful < State
+  def name
+    'Playful'
+  end
+
   def respond_to_food
     'Penelope is undistracted from her quest to vanquish da bee.'
   end
@@ -51,6 +63,10 @@ end
 
 # Time for some Fancy Feast!
 class Hungry < State
+  def name
+    'Hungry'
+  end
+
   def respond_to_food
     @context.change_state(Sleepy.new)
     'Penelope goes to town on her puck of meat.'

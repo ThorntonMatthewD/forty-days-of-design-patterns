@@ -8,6 +8,10 @@ class Penelope
     change_state(state)
   end
 
+  def current_state
+    @state.name
+  end
+
   def change_state(new_state)
     @state = new_state
     @state.context = self
