@@ -69,7 +69,7 @@ class Hungry < State
 
   def respond_to_food
     @context.change_state(Sleepy.new)
-    'Penelope goes to town on her puck of meat.'
+    'Penelope goes to town on her puck of meat. She becomes sleepy.'
   end
 
   def respond_to_noise
