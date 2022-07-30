@@ -28,6 +28,6 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Memento
 - [X] Observer
 - [X] State
-- [ ] Strategy
+- [X] Strategy
 - [ ] Template Method
 - [ ] Visitor
