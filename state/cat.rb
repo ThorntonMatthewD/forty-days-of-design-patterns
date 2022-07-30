@@ -22,7 +22,7 @@ class Penelope
   end
 
   def respond_to_noise
-    @state.respond_to_food
+    @state.respond_to_noise
   end
 
   # This is her favorite toy
