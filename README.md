@@ -27,7 +27,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [ ] Mediator
 - [ ] Memento
 - [X] Observer
-- [ ] State
+- [X] State
 - [ ] Strategy
 - [ ] Template Method
 - [ ] Visitor
