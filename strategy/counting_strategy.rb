@@ -11,8 +11,8 @@ end
 class CounterWithScan < CountingStrategy
   def count_characters(string, char)
     {
-      method: 'scan',
-      count: string.scan(/#{char}/)
+      strategy: 'scan',
+      count: string.scan(/#{char}/).length
     }
   end
 end
@@ -21,7 +21,7 @@ end
 class CounterWithCount < CountingStrategy
   def count_characters(string, char)
     {
-      method: 'count',
+      strategy: 'count',
       count: string.count(char)
     }
   end
