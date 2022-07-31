@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # A recipient of commands.
+# Very stubborn, but luckily very food-motivated.
 class Trainee
   def initialize(name)
     @name = name
