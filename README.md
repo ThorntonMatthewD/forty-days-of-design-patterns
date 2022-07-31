@@ -21,7 +21,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 
 ## Behavioral Patterns
 - [X] Chain of Responsibility
-- [ ] Command
+- [X] Command
 - [ ] Interpreter
 - [X] Iterator
 - [ ] Mediator
