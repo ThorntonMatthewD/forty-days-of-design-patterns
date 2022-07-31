@@ -12,4 +12,5 @@ end
 
 group :development do
   gem 'solargraph', '~> 0.45.0'
+  gem 'guard-rspec', require: false
 end
