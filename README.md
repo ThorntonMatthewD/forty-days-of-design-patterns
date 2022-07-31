@@ -30,4 +30,4 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [X] State
 - [X] Strategy
 - [ ] Template Method
-- [ ] Visitor
+- [X] Visitor
