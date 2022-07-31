@@ -7,7 +7,7 @@ Dir.glob('command/*.rb') do |file|
 end
 
 describe 'Trainer - Command' do
-  before(:each) do
+  before do
     trainer.issue_sit = sit
     trainer.issue_spin = spin
     trainer.issue_give_paw = give_paw
