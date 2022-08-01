@@ -29,16 +29,10 @@ class TaxonomicCategory
   end
 end
 
-# The Felidae family is within the Carnivora order. Cats!
-# https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=180580
 class Family < TaxonomicCategory; end
 
-# Felinae is a subfamily of Felidae
-# https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=552363#null
 class Subfamily < TaxonomicCategory; end
 
-# Felis is a genus within Felinae
-# https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=180586#null
 class Genus < TaxonomicCategory; end
 
 # Represents an individual species
