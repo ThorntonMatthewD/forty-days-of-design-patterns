@@ -39,8 +39,4 @@ class Biscuit < BakedGood
   def bake_biscuit
     'Biscuit dough has been baked in the oven'
   end
-
-  def knead_dough
-    puts "You're not supposed to knead biscuit dough! You must be a cat!"
-  end
 end
