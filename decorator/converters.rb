@@ -12,7 +12,7 @@ class StorageDecorator < DataStore
   end
 
   def retrieve_data
-    @data_store.retrieve_data
+    raise NotImplementedError
   end
 end
 
