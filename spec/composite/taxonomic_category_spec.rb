@@ -142,5 +142,10 @@ describe 'TaxonomicCategory - Composite' do
          'The African golden cat (Caracel aurata) can purr.']
       )
     end
+
+    it 'cannot remove a parent' do
+      felis_genus.remove_child(family)
+      expect(family).to_not eq nil
+    end
   end
 end
