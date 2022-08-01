@@ -8,9 +8,10 @@ group :test do
   gem 'rspec', '~> 3.11'
   gem 'rubocop', '~> 1.31'
   gem 'rubocop-rspec', '~> 2.12'
+  gem 'simplecov', require: false
 end
 
 group :development do
-  gem 'solargraph', '~> 0.45.0'
   gem 'guard-rspec', require: false
+  gem 'solargraph', '~> 0.45.0'
 end
