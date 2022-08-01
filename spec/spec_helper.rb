@@ -14,6 +14,7 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  # Run coverage checks on code via simplecov
   require 'simplecov'
   SimpleCov.start
   # rspec-expectations config goes here. You can use an alternate
