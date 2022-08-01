@@ -25,7 +25,7 @@ class TaxonomicCategory
   end
 
   def purr
-    @children.map(&:purr)
+    @children.map(&:purr).flatten
   end
 end
 
