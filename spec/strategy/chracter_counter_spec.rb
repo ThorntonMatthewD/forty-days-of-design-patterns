@@ -53,3 +53,10 @@ describe 'CharacterCounter - Strategy' do
     it_behaves_like 'a right proper counting strategy'
   end
 end
+
+describe CountingStrategy do
+  let(:counting_strategy) { CountingStrategy.new }
+  it '.count_characters on base CountingStrategy class objects throws NotImplementedError' do
+    expect { counting_strategy.count_characters('', '') }.to raise_exception(NotImplementedError)
+  end
+end
