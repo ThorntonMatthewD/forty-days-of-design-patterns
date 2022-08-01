@@ -77,7 +77,43 @@ describe 'TaxonomicCategory - Composite' do
     ]
   end
 
-  it do
-    expect(true).to eq true
+  it 'calling purr on the family gets the results for everyone' do
+    expect(family.purr).to match_array(
+      ['The House cat (Felis catus) can purr.',
+       'The Sand cat (Felis margarita) can purr.',
+       'The Jungle cat (Felis chaus) can purr.',
+       'The Caracel (Caracel caracal) can purr.',
+       'The African golden cat (Caracel aurata) can purr.',
+       'The Lion (Panthera leo) cannot purr.',
+       'The Tiger (Panthera tigris) cannot purr.',
+       'The Clouded leopard (Neofelis nebulosa) cannot purr.',
+       'The Sunda clouded leopard (Neofelis diardi) cannot purr.']
+    )
+  end
+
+  it 'calling purr on a subfamily gets the results for just that subfamily' do
+    expect(felinae_subfamily.purr).to match_array(
+      ['The House cat (Felis catus) can purr.',
+       'The Sand cat (Felis margarita) can purr.',
+       'The Jungle cat (Felis chaus) can purr.',
+       'The Caracel (Caracel caracal) can purr.',
+       'The African golden cat (Caracel aurata) can purr.']
+    )
+  end
+
+  it 'calling purr on a genus gets the results for just that genus' do
+    expect(felis_genus.purr).to match_array(
+      ['The House cat (Felis catus) can purr.',
+       'The Jungle cat (Felis chaus) can purr.',
+       'The Sand cat (Felis margarita) can purr.']
+    )
+  end
+
+  it 'calling purr on a species gets the results for just that species' do
+    species_that_purrs = Species.new('Felis catus', 'House cat', true)
+    species_that_does_not_purr = Species.new('Panthera leo', 'Lion', false)
+
+    expect(species_that_purrs.purr).to eq 'The House cat (Felis catus) can purr.'
+    expect(species_that_does_not_purr.purr).to eq 'The Lion (Panthera leo) cannot purr.'
   end
 end
