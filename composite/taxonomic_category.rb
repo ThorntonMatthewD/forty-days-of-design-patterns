@@ -20,10 +20,6 @@ class TaxonomicCategory
     child.parent = nil
   end
 
-  def can_have_children?
-    true
-  end
-
   def purr
     @children.map(&:purr).flatten
   end
@@ -44,9 +40,12 @@ class Species < TaxonomicCategory
     super(binomial_nomenclature)
   end
 
-  # Not counting subspecies within this example for the sake of my sanity.
-  def can_have_children?
-    false
+  def add_child(_)
+    raise NoMethodError, 'Species cannot have children'
+  end
+
+  def remove_child(_)
+    raise NoMethodError, 'Species do not have children to remove'
   end
 
   def purr
