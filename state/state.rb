@@ -17,7 +17,7 @@ class State
   end
 
   def respond_to_da_bee
-    NotImplementedError
+    raise NotImplementedError
   end
 end
 
