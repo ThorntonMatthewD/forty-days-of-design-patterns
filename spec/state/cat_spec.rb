@@ -80,4 +80,24 @@ describe 'Penelope - State' do
       expect(subject.current_state).to eq 'Hungry'
     end
   end
+
+  describe State do
+    let(:state) { State.new }
+
+    it '.name throws NotImplementedError' do
+      expect { state.name }.to raise_exception(NotImplementedError)
+    end
+
+    it '.respond_to_food throws NotImplementedError' do
+      expect { state.respond_to_food }.to raise_exception(NotImplementedError)
+    end
+
+    it '.respond_to_noise throws NotImplementedError' do
+      expect { state.respond_to_noise }.to raise_exception(NotImplementedError)
+    end
+
+    it '.respond_to_da_bee throws NotImplementedError' do
+      expect { state.respond_to_da_bee }.to raise_exception(NotImplementedError)
+    end
+  end
 end
