@@ -133,7 +133,14 @@ describe 'TaxonomicCategory - Composite' do
 
   describe 'remove_child' do
     it 'removing a subfamily from the family causes it and its descendents to no longer appear' do
-      # TODO
+      family.remove_child(pantherinae_subfamily)
+      expect(family.purr).to match_array(
+        ['The House cat (Felis catus) can purr.',
+         'The Sand cat (Felis margarita) can purr.',
+         'The Jungle cat (Felis chaus) can purr.',
+         'The Caracel (Caracel caracal) can purr.',
+         'The African golden cat (Caracel aurata) can purr.']
+      )
     end
   end
 end
