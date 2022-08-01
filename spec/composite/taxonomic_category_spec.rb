@@ -77,43 +77,63 @@ describe 'TaxonomicCategory - Composite' do
     ]
   end
 
-  it 'calling purr on the family gets the results for everyone' do
-    expect(family.purr).to match_array(
-      ['The House cat (Felis catus) can purr.',
-       'The Sand cat (Felis margarita) can purr.',
-       'The Jungle cat (Felis chaus) can purr.',
-       'The Caracel (Caracel caracal) can purr.',
-       'The African golden cat (Caracel aurata) can purr.',
-       'The Lion (Panthera leo) cannot purr.',
-       'The Tiger (Panthera tigris) cannot purr.',
-       'The Clouded leopard (Neofelis nebulosa) cannot purr.',
-       'The Sunda clouded leopard (Neofelis diardi) cannot purr.']
-    )
+  describe '.purr' do
+    it 'calling purr on the family gets the results for everyone' do
+      expect(family.purr).to match_array(
+        ['The House cat (Felis catus) can purr.',
+         'The Sand cat (Felis margarita) can purr.',
+         'The Jungle cat (Felis chaus) can purr.',
+         'The Caracel (Caracel caracal) can purr.',
+         'The African golden cat (Caracel aurata) can purr.',
+         'The Lion (Panthera leo) cannot purr.',
+         'The Tiger (Panthera tigris) cannot purr.',
+         'The Clouded leopard (Neofelis nebulosa) cannot purr.',
+         'The Sunda clouded leopard (Neofelis diardi) cannot purr.']
+      )
+    end
+
+    it 'calling purr on a subfamily gets the results for just that subfamily' do
+      expect(felinae_subfamily.purr).to match_array(
+        ['The House cat (Felis catus) can purr.',
+         'The Sand cat (Felis margarita) can purr.',
+         'The Jungle cat (Felis chaus) can purr.',
+         'The Caracel (Caracel caracal) can purr.',
+         'The African golden cat (Caracel aurata) can purr.']
+      )
+    end
+
+    it 'calling purr on a genus gets the results for just that genus' do
+      expect(felis_genus.purr).to match_array(
+        ['The House cat (Felis catus) can purr.',
+         'The Jungle cat (Felis chaus) can purr.',
+         'The Sand cat (Felis margarita) can purr.']
+      )
+    end
+
+    it 'calling purr on a species gets the results for just that species' do
+      species_that_purrs = Species.new('Felis catus', 'House cat', true)
+      species_that_does_not_purr = Species.new('Panthera leo', 'Lion', false)
+
+      expect(species_that_purrs.purr).to eq 'The House cat (Felis catus) can purr.'
+      expect(species_that_does_not_purr.purr).to eq 'The Lion (Panthera leo) cannot purr.'
+    end
   end
 
-  it 'calling purr on a subfamily gets the results for just that subfamily' do
-    expect(felinae_subfamily.purr).to match_array(
-      ['The House cat (Felis catus) can purr.',
-       'The Sand cat (Felis margarita) can purr.',
-       'The Jungle cat (Felis chaus) can purr.',
-       'The Caracel (Caracel caracal) can purr.',
-       'The African golden cat (Caracel aurata) can purr.']
-    )
+  describe Species do
+    let(:species) { Species.new('Felis catus', 'House cat', true) }
+
+    it 'cannot add children to species' do
+      expect { species.add_child('Some subspecies') }.to raise_exception(NoMethodError)
+    end
+
+    it 'cannot remove children from species (they don\'t have any)' do
+      expect { species.remove_child('Some subspecies') }.to raise_exception(NoMethodError)
+    end
   end
 
-  it 'calling purr on a genus gets the results for just that genus' do
-    expect(felis_genus.purr).to match_array(
-      ['The House cat (Felis catus) can purr.',
-       'The Jungle cat (Felis chaus) can purr.',
-       'The Sand cat (Felis margarita) can purr.']
-    )
-  end
-
-  it 'calling purr on a species gets the results for just that species' do
-    species_that_purrs = Species.new('Felis catus', 'House cat', true)
-    species_that_does_not_purr = Species.new('Panthera leo', 'Lion', false)
-
-    expect(species_that_purrs.purr).to eq 'The House cat (Felis catus) can purr.'
-    expect(species_that_does_not_purr.purr).to eq 'The Lion (Panthera leo) cannot purr.'
+  describe 'remove_child' do
+    it 'removing a subfamily from the family causes it and its descendents to no longer appear' do
+      # TODO
+    end
   end
 end
