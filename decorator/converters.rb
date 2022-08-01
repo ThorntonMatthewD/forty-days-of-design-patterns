@@ -8,7 +8,7 @@ class StorageDecorator < DataStore
 
   def initialize(data_store)
     @data_store = data_store
-    super
+    super(data_store.data)
   end
 
   def retrieve_data

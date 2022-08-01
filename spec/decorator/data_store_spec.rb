@@ -53,3 +53,22 @@ describe 'DataStore - Decorator' do
     it_behaves_like 'retrieves data from storage properly'
   end
 end
+
+describe 'DataStore - Interface' do
+  let(:data) { (1..10).to_a }
+
+  subject { DataStore.new(data) }
+
+  it 'data attribute is directly accessible for reading and modification' do
+    expect(subject.data).to match_array data
+
+    new_data = (10..20).to_a
+    subject.data = new_data
+
+    expect(subject.data).to match_array new_data
+  end
+
+  it '.retrieve_data is not implemented on the interface and throws a NotImplementedError' do
+    expect { subject.retrieve_data }.to raise_exception(NotImplementedError)
+  end
+end
