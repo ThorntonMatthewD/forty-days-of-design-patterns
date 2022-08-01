@@ -13,7 +13,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 ## Structural Patterns
 - [ ] Adapter
 - [ ] Bridge
-- [ ] Composite
+- [X] Composite
 - [X] Decorator
 - [ ] Facade
 - [ ] Flyweight
