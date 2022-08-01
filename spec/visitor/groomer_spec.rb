@@ -30,3 +30,21 @@ describe 'Groomer - Visitor' do
     )
   end
 end
+
+describe 'Groomer - Interface' do
+  let(:cat) { 'Meow, I am a cat' }
+
+  subject { Groomer.new }
+
+  it '.groom_long_hair_cat' do
+    expect { subject.groom_long_hair_cat(cat) }.to raise_exception(NotImplementedError)
+  end
+
+  it '.groom_short_hair_cat' do
+    expect { subject.groom_short_hair_cat(cat) }.to raise_exception(NotImplementedError)
+  end
+
+  it '.groom_bald_cat' do
+    expect { subject.groom_bald_cat(cat) }.to raise_exception(NotImplementedError)
+  end
+end
