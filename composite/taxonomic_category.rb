@@ -16,7 +16,7 @@ class TaxonomicCategory
   end
 
   def remove_child(child)
-    @children.remove(child)
+    @children.remove_child(child)
     child.parent = nil
   end
 
