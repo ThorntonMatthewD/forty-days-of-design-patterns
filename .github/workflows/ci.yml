@@ -13,3 +13,5 @@ jobs:
           bundler-cache: true
       - name: Run RSpec
         run: bundle exec rspec spec
+        env:
+          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
