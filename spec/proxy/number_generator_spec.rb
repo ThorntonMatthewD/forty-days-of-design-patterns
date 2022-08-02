@@ -30,4 +30,8 @@ describe 'ProxyNumberGenerator - Proxy' do
 
     subject.provide_number(9999)
   end
+
+  it 'RandomNumberGenerator can be called directly' do
+    expect { larger_number_generator.provide_number(9999) }.to_not raise_exception
+  end
 end
