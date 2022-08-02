@@ -6,7 +6,7 @@ Dir.glob('proxy/*.rb') do |file|
   require_relative "../../#{file}"
 end
 
-describe 'NumberList - Interface' do
+describe 'NumberGenerator - Interface' do
   subject { NumberGenerator.new }
 
   it 'interfance cannot directly provide a number' do
