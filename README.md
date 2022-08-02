@@ -17,7 +17,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [X] Decorator
 - [ ] Facade
 - [ ] Flyweight
-- [ ] Proxy
+- [X] Proxy
 
 ## Behavioral Patterns
 - [X] Chain of Responsibility
