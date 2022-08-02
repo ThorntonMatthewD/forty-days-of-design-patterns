@@ -6,28 +6,28 @@ I am currently working through the wealth of knowledge contained within [Design 
 ## Creational Patterns
 - [ ] Abstract Factory
 - [ ] Builder
-- [X] Factory Method
+- [X] [Factory Method](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/factory)
 - [ ] Prototype
-- [X] Singleton
+- [X] [Singleton](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/singleton)
 
 ## Structural Patterns
 - [ ] Adapter
 - [ ] Bridge
-- [X] Composite
-- [X] Decorator
+- [X] [Composite](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/composite)
+- [X] [Decorator](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/decorator)
 - [ ] Facade
 - [ ] Flyweight
-- [X] Proxy
+- [X] [Proxy](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/proxy)
 
 ## Behavioral Patterns
-- [X] Chain of Responsibility
-- [X] Command
+- [X] [Chain of Responsibility](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/chain_of_responsibility)
+- [X] [Command](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/command)
 - [ ] Interpreter
-- [X] Iterator
+- [X] [Iterator](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/iterator)
 - [ ] Mediator
 - [ ] Memento
-- [X] Observer
-- [X] State
-- [X] Strategy
+- [X] [Observer](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/observer)
+- [X] [State](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/state)
+- [X] [Strategy](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/strategy)
 - [ ] Template Method
-- [X] Visitor
+- [X] [Visitor](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/visitor)
