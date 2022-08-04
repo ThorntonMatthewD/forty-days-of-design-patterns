@@ -4,6 +4,8 @@ require 'ketchup_error'
 
 # Makes burgers!
 class BurgerBuilder
+  attr_reader :burger
+
   def initialize
     create_base_burger
   end
