@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'ketchup_error'
+require_relative 'ketchup_error'
 
 # Makes burgers!
 class BurgerBuilder
@@ -47,6 +47,6 @@ class BurgerBuilder
   def add_ketchup
     @burger = []
 
-    raise KethcupError
+    raise KetchupError
   end
 end
