@@ -5,7 +5,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 
 ## Creational Patterns
 - [ ] Abstract Factory
-- [ ] Builder
+- [X] [Builder](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/builder)
 - [X] [Factory Method](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/factory)
 - [ ] Prototype
 - [X] [Singleton](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/singleton)
