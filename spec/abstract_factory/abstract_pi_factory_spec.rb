@@ -23,6 +23,13 @@ describe 'Abstract Factory Example' do
     ]
   end
 
+  let(:board_methods) do
+    %w[
+      name
+      connect_to_network
+      plug_into_breadboard
+    ]
+  end
   describe AbstractPiFactory do
     it 'all factories should respond to the same methods' do
       factory_methods.each do |method_name|
@@ -56,6 +63,14 @@ describe 'Abstract Factory Example' do
     it { expect(subject.create_pi_with_wireless_chip_and_headers).to be_an_instance_of(PiZeroHW) }
   end
 
+  shared_examples 'raspberry_pi_board' do
+    it 'responds to all board methods' do
+      board_methods.each do |method_name|
+        expect(subject.respond_to?(method_name)).to eq true
+      end
+    end
+  end
+
   describe 'Pi Pico Product Line' do
     context PiPico do
       subject { PiPico.new }
@@ -65,6 +80,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq no_wireless_chip_response }
 
       it { expect(subject.plug_into_breadboard).to eq no_headers_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiPicoW do
@@ -75,6 +92,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq affirmative_response }
 
       it { expect(subject.plug_into_breadboard).to eq no_headers_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiPicoH do
@@ -85,6 +104,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq no_wireless_chip_response }
 
       it { expect(subject.plug_into_breadboard).to eq affirmative_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiPicoHW do
@@ -95,6 +116,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq affirmative_response }
 
       it { expect(subject.plug_into_breadboard).to eq affirmative_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
   end
 
@@ -107,6 +130,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq no_wireless_chip_response }
 
       it { expect(subject.plug_into_breadboard).to eq no_headers_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiZeroW do
@@ -117,6 +142,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq affirmative_response }
 
       it { expect(subject.plug_into_breadboard).to eq no_headers_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiZeroH do
@@ -127,6 +154,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq no_wireless_chip_response }
 
       it { expect(subject.plug_into_breadboard).to eq affirmative_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
 
     context PiZeroHW do
@@ -137,6 +166,8 @@ describe 'Abstract Factory Example' do
       it { expect(subject.connect_to_network).to eq affirmative_response }
 
       it { expect(subject.plug_into_breadboard).to eq affirmative_response }
+
+      it_behaves_like 'raspberry_pi_board'
     end
   end
 end
