@@ -3,9 +3,7 @@
 require_relative 'pi'
 
 # Represents a Raspberry Pi Zero.. generally.
-class AbstractPiZero < AbstractPi
-  def processor?; end
-end
+class AbstractPiZero < AbstractPi; end
 
 # Raspberry Pi Zero
 class PiZero < AbstractPiZero
@@ -19,10 +17,6 @@ class PiZero < AbstractPiZero
 
   def plug_into_breadboard
     'You\'ll need to solder on headers.'
-  end
-
-  def processor?
-    true
   end
 end
 
@@ -39,10 +33,6 @@ class PiZeroW < AbstractPiZero
   def plug_into_breadboard
     'You\'ll need to solder on headers.'
   end
-
-  def processor?
-    true
-  end
 end
 
 # Raspberry Pi H[eaders]
@@ -58,10 +48,6 @@ class PiZeroH < AbstractPiZero
   def plug_into_breadboard
     'Okay!'
   end
-
-  def processor?
-    true
-  end
 end
 
 # Raspberry Pi W[ireless] H[eaders]
@@ -76,9 +62,5 @@ class PiZeroHW < AbstractPiZero
 
   def plug_into_breadboard
     'Okay!'
-  end
-
-  def processor?
-    true
   end
 end

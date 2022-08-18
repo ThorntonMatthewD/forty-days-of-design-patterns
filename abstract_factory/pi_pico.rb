@@ -3,9 +3,7 @@
 require_relative 'pi'
 
 # Represents a Raspberry Pi Pico.. generally.
-class AbstractPiPico < AbstractPi
-  def microcontroller?; end
-end
+class AbstractPiPico < AbstractPi; end
 
 # Raspberry Pi Pico
 class PiPico < AbstractPiPico
@@ -19,10 +17,6 @@ class PiPico < AbstractPiPico
 
   def plug_into_breadboard
     'You\'ll need to solder on headers.'
-  end
-
-  def microcontroller?
-    true
   end
 end
 
@@ -39,10 +33,6 @@ class PiPicoW < AbstractPiPico
   def plug_into_breadboard
     'You\'ll need to solder on headers.'
   end
-
-  def microcontroller?
-    true
-  end
 end
 
 # Raspberry Pi H[eaders]
@@ -58,10 +48,6 @@ class PiPicoH < AbstractPiPico
   def plug_into_breadboard
     'Okay!'
   end
-
-  def microcontroller?
-    true
-  end
 end
 
 # Raspberry Pi W[ireless] H[eaders]
@@ -76,9 +62,5 @@ class PiPicoHW < AbstractPiPico
 
   def plug_into_breadboard
     'Okay!'
-  end
-
-  def microcontroller?
-    true
   end
 end
