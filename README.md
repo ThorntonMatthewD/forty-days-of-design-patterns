@@ -7,7 +7,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [X] [Abstract Factory](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/abstract_factory)
 - [X] [Builder](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/builder)
 - [X] [Factory Method](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/factory)
-- [ ] Prototype
+- [X] [Prototype](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/prototype)
 - [X] [Singleton](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/singleton)
 
 ## Structural Patterns
