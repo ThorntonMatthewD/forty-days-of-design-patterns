@@ -6,10 +6,10 @@ class GamingPC
     @pc_attrs = pc_attrs
   end
 
-  def calculate_prime_numbers(silicon_lottery_rank)
-    time_to_calculate = silicon_lottery_rank * 0.6
+  def calculate_prime_numbers
+    time_to_calculate = @pc_attrs[:silicon_lottery_rank] * 0.6
 
-    "The #{@pc_attrs.cpu} revs up, and finds 1230 prime" \
+    "#{@pc_attrs[:name]} revs up, and finds 1230 prime" \
       "numbers between 1 and 10000 in #{time_to_calculate} seconds."
   end
 end
