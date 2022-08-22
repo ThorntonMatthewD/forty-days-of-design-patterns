@@ -27,7 +27,7 @@ describe 'Penelope - State' do
     it 'will wake up to take on da bee' do
       expect(subject.respond_to_da_bee).to eq(
         'Penelope\'s bloodlust for Bee is insatiable. ' \
-          'She is awoken from her slumber in a fit of turbelent, furry fury.'
+        'She is awoken from her slumber in a fit of turbelent, furry fury.'
       )
       expect(subject.current_state).to eq 'Playful'
     end
