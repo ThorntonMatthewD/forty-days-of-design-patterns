@@ -16,7 +16,7 @@ I am currently working through the wealth of knowledge contained within [Design 
 - [X] [Composite](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/composite)
 - [X] [Decorator](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/decorator)
 - [ ] Facade
-- [ ] Flyweight
+- [X] [Flyweight](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/flyweight)
 - [X] [Proxy](https://github.com/ThorntonMatthewD/forty-days-of-design-patterns/tree/master/proxy)
 
 ## Behavioral Patterns
