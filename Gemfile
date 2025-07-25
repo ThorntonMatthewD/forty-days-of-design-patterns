@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '3.0.4'
+ruby '3.2.0'
 
 group :test do
   gem 'codecov', '~> 0'
@@ -15,5 +15,5 @@ end
 group :development do
   gem 'byebug'
   gem 'guard-rspec', require: false
-  gem 'solargraph', '~> 0.45.0'
+  gem 'solargraph', '~> 0.56.0'
 end
