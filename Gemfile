@@ -6,9 +6,9 @@ ruby '3.2.0'
 
 group :test do
   gem 'codecov', '~> 0'
-  gem 'rspec', '~> 3.11'
-  gem 'rubocop', '~> 1.31'
-  gem 'rubocop-rspec', '~> 2.12'
+  gem 'rspec', '~> 3.13'
+  gem 'rubocop', '< 2.0'
+  gem 'rubocop-rspec', '~> 3.6'
   gem 'simplecov', require: false
 end
 
