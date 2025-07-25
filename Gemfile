@@ -13,7 +13,6 @@ group :test do
 end
 
 group :development do
-  gem 'byebug'
   gem 'guard-rspec', require: false
   gem 'solargraph', '~> 0.56.0'
 end
