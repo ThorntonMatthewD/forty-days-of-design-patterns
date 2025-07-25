@@ -5,11 +5,10 @@ source 'https://rubygems.org'
 ruby '3.4.5'
 
 group :test do
-  gem 'codecov', '~> 0'
   gem 'rspec', '~> 3.13'
   gem 'rubocop', '< 2.0'
   gem 'rubocop-rspec', '~> 3.6'
-  gem 'simplecov', require: false
+  gem 'simplecov', '~> 0.22.0', require: false
 end
 
 group :development do
