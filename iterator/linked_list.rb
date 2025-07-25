@@ -6,6 +6,9 @@ require_relative 'linked_list_iterator'
 class LinkedList
   def initialize
     @head = nil
+    # This isn't actually a doubly linked list. I am just testing
+    # if Harness CI will pick up this change correctly.
+    @tail = nil
   end
 
   def add_element(value)
