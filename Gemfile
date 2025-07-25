@@ -9,6 +9,7 @@ group :test do
   gem 'rubocop', '< 2.0'
   gem 'rubocop-rspec', '~> 3.6'
   gem 'simplecov', '~> 0.22.0', require: false
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
