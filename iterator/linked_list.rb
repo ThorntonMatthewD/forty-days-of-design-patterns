@@ -8,7 +8,7 @@ class LinkedList
     @head = nil
     # This isn't actually a doubly linked list. I am just testing
     # if Harness CI will pick up this change correctly.
-    @tail = "wag"
+    @tail = "test"
   end
 
   def add_element(value)
