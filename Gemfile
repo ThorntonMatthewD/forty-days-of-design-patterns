@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '3.2.0'
+ruby '3.4.4'
 
 group :test do
   gem 'codecov', '~> 0'
