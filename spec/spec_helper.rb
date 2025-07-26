@@ -14,9 +14,9 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  require 'fileutils'
+
   # Run coverage checks on code via simplecov
-
-
   if ENV['CI']
     require 'simplecov'
     SimpleCov.start
