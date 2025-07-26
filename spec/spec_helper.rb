@@ -17,7 +17,7 @@ RSpec.configure do |config|
   require 'fileutils'
 
   # Run coverage checks on code via simplecov
-  if ENV['CI']
+  if ENV['ENABLE_COVERAGE']
     require 'simplecov'
     SimpleCov.start
 
