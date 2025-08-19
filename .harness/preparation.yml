@@ -36,6 +36,6 @@ pipeline:
                     shell: Sh
                     command: |
                       export RUBY_VERSION=$(cat .ruby-version)
-                      echo "RUBY_VERSION=$RUBY_VERSION" >> harness_output.properties
+                      echo $RUBY_VERSION
                     outputVariables:
                       - name: RUBY_VERSION
