@@ -55,8 +55,8 @@ pipeline:
             properties:
               ci:
                 codebase:
-                  repoName: <+input>
-                  build: <+input>
+                  repoName: <+pipeline.properties.ci.codebase.repoName>
+                  build: <+pipeline.properties.ci.codebase.build>
             stages:
               - stage:
                   identifier: buildtest
