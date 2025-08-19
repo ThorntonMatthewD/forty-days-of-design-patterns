@@ -7,6 +7,8 @@ class PCStore
   # Just allowing accessing to the PCBuilder object for testing
   attr_reader :pc_supplier
 
+  # Pushing an inconsequential change to trigger the pipeline
+
   def initialize
     @pc_supplier = PCBuilder.new
 
