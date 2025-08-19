@@ -4,6 +4,8 @@
 class LinkedListIterator
   def initialize(head)
     @head = head
+
+    # TAIL
   end
 
   def retrive_list
