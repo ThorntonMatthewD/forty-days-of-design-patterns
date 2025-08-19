@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: My_GitHub_Connector
-        repoName: forty-days-of-design-patterns
+        repoName: <+input>
         build: <+input>
   stages:
     - stage:
