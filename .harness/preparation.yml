@@ -57,4 +57,16 @@ pipeline:
                 codebase:
                   repoName: <+input>
                   build: <+input>
+            stages:
+              - stage:
+                  identifier: buildtest
+                  type: CI
+                  spec:
+                    execution:
+                      steps:
+                        - step:
+                            identifier: RunTests_1
+                            type: RunTests
+                            spec:
+                              image: ruby:<+pipeline.stages.prep.spec.execution.steps.PopulateRuntimeVars.output.outputVariables.RUBY_VERSION>-bookworm
         tags: {}
