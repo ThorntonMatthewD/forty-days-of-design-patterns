@@ -23,6 +23,7 @@ pipeline:
               connectorRef: account.localcluster
               namespace: caseflow
               automountServiceAccountToken: true
+              nodeSelector: {}
               os: Linux
           execution:
             steps:
@@ -39,3 +40,23 @@ pipeline:
                       echo $RUBY_VERSION
                     outputVariables:
                       - name: RUBY_VERSION
+    - stage:
+        name: execute_tests
+        identifier: execute_tests
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: Test_Thingy
+          project: default_project
+          inputs:
+            identifier: Test_Thingy
+            properties:
+              ci:
+                codebase:
+                  build: <+input>
+        failureStrategies:
+          - onFailure:
+              errors: []
+              action:
+                type: MarkAsFailure
