@@ -5,7 +5,7 @@ class GamingPC
   def initialize(pc_attrs)
     @pc_attrs = pc_attrs
 
-    # Test 123
+    # Test 123 5555
   end
 
   def calculate_prime_numbers
