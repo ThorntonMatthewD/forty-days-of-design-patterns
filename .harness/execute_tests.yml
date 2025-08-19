@@ -69,3 +69,5 @@ pipeline:
             - /shared/scan_results/
           buildIntelligence:
             enabled: false
+        delegateSelectors:
+          - local-k8s-helm-delegate
