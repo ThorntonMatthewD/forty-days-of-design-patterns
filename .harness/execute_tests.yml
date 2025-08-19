@@ -38,7 +38,7 @@ pipeline:
                   identifier: RunTests_1
                   spec:
                     connectorRef: account.harnessImage
-                    image: ruby:<+input>-bookworm
+                    image: <+input>
                     language: Ruby
                     buildTool: Rspec
                     runOnlySelectedTests: false
