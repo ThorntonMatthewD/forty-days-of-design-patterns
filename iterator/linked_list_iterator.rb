@@ -5,7 +5,7 @@ class LinkedListIterator
   def initialize(head)
     @head = head
 
-    # TAIL
+    # TAIL 2
   end
 
   def retrive_list
