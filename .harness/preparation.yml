@@ -54,4 +54,5 @@ pipeline:
             properties:
               ci:
                 codebase:
+                  repoName: <+input>
                   build: <+input>
