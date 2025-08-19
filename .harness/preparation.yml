@@ -55,7 +55,7 @@ pipeline:
             properties:
               ci:
                 codebase:
-                  repoName: echo '<+inputSet>' | jq -s
+                  repoName: <+input>
                   build: <+input>
             stages:
               - stage:
