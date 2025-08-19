@@ -53,7 +53,7 @@ pipeline:
                     enableTestSplitting: true
                     testSplitStrategy: ClassTiming
                   when:
-                    condition: <+pipeline.stages.buildtest.spec.execution.steps.PopulateRuntimeVars.output.outputVariables.RUBY_VERSION> != null
+                    condition: <+pipeline.variables.versions.ruby_version> != null
                     stageStatus: Success
                   failureStrategies:
                     - onFailure:
