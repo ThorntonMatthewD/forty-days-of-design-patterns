@@ -33,29 +33,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Run
-                  name: PopulateRuntimeVars
-                  identifier: PopulateRuntimeVars
-                  spec:
-                    connectorRef: account.harnessImage
-                    image: alpine:latest
-                    shell: Sh
-                    command: |-
-                      ls -a
-                      cat .ruby-version
-                      export RUBY_VERSION=$(cat .ruby-version)
-                    outputVariables:
-                      - name: RUBY_VERSION
-              - step:
-                  type: Run
-                  name: PrintVar
-                  identifier: PrintVar
-                  spec:
-                    connectorRef: account.harnessImage
-                    image: alpine:latest
-                    shell: Sh
-                    command: echo <+pipeline.stages.buildtest.spec.execution.steps.PopulateRuntimeVars.output.outputVariables.RUBY_VERSION>
-              - step:
                   type: RunTests
                   name: RunTests_1
                   identifier: RunTests_1
