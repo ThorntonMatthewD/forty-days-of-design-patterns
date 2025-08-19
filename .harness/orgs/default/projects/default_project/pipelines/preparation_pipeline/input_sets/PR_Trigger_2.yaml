@@ -1,0 +1,29 @@
+inputSet:
+  name: PR Trigger 2
+  identifier: PR_Trigger_2
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: preparation_pipeline
+    properties:
+      ci:
+        codebase:
+          repoName: forty-days-of-design-patterns
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
+    stages:
+      - stage:
+          identifier: Execute_Tests
+          type: Pipeline
+          spec:
+            inputs:
+              identifier: Execute_Tests
+              properties:
+                ci:
+                  codebase:
+                    build:
+                      type: branch
+                      spec:
+                        branch: <+trigger.branch>
