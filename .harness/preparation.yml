@@ -47,7 +47,7 @@ pipeline:
         type: Pipeline
         spec:
           org: default
-          pipeline: Test_Thingy
+          pipeline: Execute_Tests
           project: default_project
           inputs:
             identifier: Test_Thingy
