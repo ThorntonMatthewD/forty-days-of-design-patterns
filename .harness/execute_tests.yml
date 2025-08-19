@@ -53,7 +53,7 @@ pipeline:
                     enableTestSplitting: true
                     testSplitStrategy: ClassTiming
                   when:
-                    condition: <+stage.pipelineVariables>.RunTests_1.spec.execution.steps.RunTests_1.spec.image> != null
+                    condition: <+stage.pipelineVariables.RunTests_1.spec.execution.steps.RunTests_1.spec.image> != null
                     stageStatus: Success
                   failureStrategies:
                     - onFailure:
