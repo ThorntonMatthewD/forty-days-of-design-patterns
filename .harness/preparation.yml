@@ -1,0 +1,41 @@
+pipeline:
+  name: Preparation Pipeline
+  identifier: preparation_pipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: My_GitHub_Connector
+        repoName: forty-days-of-design-patterns
+        build: <+input>
+  stages:
+    - stage:
+        name: prep
+        identifier: prep
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.localcluster
+              namespace: caseflow
+              automountServiceAccountToken: true
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: PopulateRuntimeVars
+                  identifier: PopulateRuntimeVars
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: alpine:latest
+                    shell: Bash
+                    command: |
+                      export RUBY_VERSION=$(cat .ruby-version)
+                      echo "RUBY_VERSION=$RUBY_VERSION" >> harness_output.properties
+                    outputVariables:
+                      - name: RUBY_VERSION
