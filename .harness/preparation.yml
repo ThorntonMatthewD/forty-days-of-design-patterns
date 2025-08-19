@@ -40,6 +40,7 @@ pipeline:
                       echo $RUBY_VERSION
                     outputVariables:
                       - name: RUBY_VERSION
+        description: ""
     - stage:
         name: Execute Tests
         identifier: Execute_Tests
