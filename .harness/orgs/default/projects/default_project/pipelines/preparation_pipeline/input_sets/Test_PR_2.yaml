@@ -1,4 +1,9 @@
 inputSet:
+  name: Test_PR_2
+  tags: {}
+  identifier: Test_PR_2
+  orgIdentifier: default
+  projectIdentifier: default_project
   pipeline:
     identifier: preparation_pipeline
     properties:
@@ -9,7 +14,17 @@ inputSet:
             type: branch
             spec:
               branch: test-harness-trigger
-  name: Test_PR_2
-  identifier: Test_PR_2
-  orgIdentifier: default
-  projectIdentifier: default_project
+    stages:
+      - stage:
+          identifier: Execute_Tests
+          type: Pipeline
+          spec:
+            inputs:
+              identifier: Execute_Tests
+              properties:
+                ci:
+                  codebase:
+                    repoName: <+input>
+                    build: <+input>
+                  versions:
+                    ruby: <+input>
