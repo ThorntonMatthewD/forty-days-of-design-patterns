@@ -26,4 +26,5 @@ inputSet:
                     build:
                       type: branch
                       spec:
+                        repoName: forty-days-of-design-patterns
                         branch: <+trigger.branch>
