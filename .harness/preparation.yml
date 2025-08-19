@@ -41,8 +41,8 @@ pipeline:
                     outputVariables:
                       - name: RUBY_VERSION
     - stage:
-        name: execute_tests
-        identifier: execute_tests
+        name: Execute Tests
+        identifier: Execute_Tests
         description: ""
         type: Pipeline
         spec:
@@ -50,13 +50,8 @@ pipeline:
           pipeline: Execute_Tests
           project: default_project
           inputs:
-            identifier: Test_Thingy
+            identifier: Execute_Tests
             properties:
               ci:
                 codebase:
                   build: <+input>
-        failureStrategies:
-          - onFailure:
-              errors: []
-              action:
-                type: MarkAsFailure
