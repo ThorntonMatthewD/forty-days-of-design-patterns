@@ -1,0 +1,15 @@
+inputSet:
+  pipeline:
+    identifier: preparation_pipeline
+    properties:
+      ci:
+        codebase:
+          repoName: forty-days-of-design-patterns
+          build:
+            type: branch
+            spec:
+              branch: test-harness-trigger
+  name: Test_PR_2
+  identifier: Test_PR_2
+  orgIdentifier: default
+  projectIdentifier: default_project
