@@ -44,6 +44,7 @@ pipeline:
       variables:
         - name: myNumber
           type: String
+          value: <+input>
           default: "1"
           description: A number between 1 and 4
           required: true
