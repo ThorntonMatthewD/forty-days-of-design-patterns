@@ -47,6 +47,11 @@ pipeline:
             description: ""
             required: false
             value: test
+          - name: myNumber
+            type: String
+            value: <+input>
+            validation:
+              regex: ^[1-4]$
     - stage:
         name: Execute Tests
         identifier: Execute_Tests
