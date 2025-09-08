@@ -41,6 +41,12 @@ pipeline:
                     outputVariables:
                       - name: RUBY_VERSION
         description: ""
+        variables:
+          - name: test
+            type: String
+            description: ""
+            required: false
+            value: test
     - stage:
         name: Execute Tests
         identifier: Execute_Tests
