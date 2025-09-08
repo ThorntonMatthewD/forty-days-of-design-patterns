@@ -1,0 +1,83 @@
+pipeline:
+  name: Preparation Pipeline
+  identifier: preparation_pipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: My_GitHub_Connector
+        repoName: <+input>
+        build: <+input>
+  stages:
+    - stage:
+        name: prep
+        identifier: prep
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.localcluster
+              namespace: caseflow
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: PopulateRuntimeVars
+                  identifier: PopulateRuntimeVars
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: alpine:latest
+                    shell: Sh
+                    command: |
+                      export RUBY_VERSION=$(cat .ruby-version)
+                      echo $RUBY_VERSION
+                    outputVariables:
+                      - name: RUBY_VERSION
+        description: ""
+        variables:
+          - name: test
+            type: String
+            description: ""
+            required: false
+            value: test
+          - name: myNumber
+            type: String
+            value: <+input>
+            validation:
+              regex: ^[1-4]$
+    - stage:
+        name: Execute Tests
+        identifier: Execute_Tests
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: Execute_Tests
+          project: default_project
+          inputs:
+            identifier: Execute_Tests
+            properties:
+              ci:
+                codebase:
+                  repoName: <+pipeline.properties.ci.codebase.repoName>
+                  build: <+input>
+            stages:
+              - stage:
+                  identifier: buildtest
+                  type: CI
+                  spec:
+                    execution:
+                      steps:
+                        - step:
+                            identifier: RunTests_1
+                            type: RunTests
+                            spec:
+                              image: ruby:<+pipeline.stages.prep.spec.execution.steps.PopulateRuntimeVars.output.outputVariables.RUBY_VERSION>-bookworm
+        tags: {}

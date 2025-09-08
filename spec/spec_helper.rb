@@ -14,11 +14,13 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  # Run coverage checks on code via simplecov
-  require 'simplecov'
-  SimpleCov.start
+  require 'fileutils'
 
-  if ENV['CI']
+  # Run coverage checks on code via simplecov
+  if ENV['ENABLE_COVERAGE']
+    require 'simplecov'
+    SimpleCov.start
+
     require 'codecov'
     SimpleCov.formatter = SimpleCov::Formatter::Codecov
   end

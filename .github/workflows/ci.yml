@@ -15,6 +15,6 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
       - name: Run RSpec
-        run: bundle exec rspec spec
+        run: bundle exec rspec spec --format RspecJunitFormatter --out rspec.xml
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}

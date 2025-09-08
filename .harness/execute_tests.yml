@@ -1,0 +1,73 @@
+pipeline:
+  name: Execute Tests
+  identifier: Execute_Tests
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: My_GitHub_Connector
+        repoName: <+input>
+        build: <+input>
+  stages:
+    - stage:
+        name: buildtest
+        identifier: buildtest
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+            paths: []
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.localcluster
+              namespace: caseflow
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: RunTests
+                  name: RunTests_1
+                  identifier: RunTests_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: <+input>
+                    language: Ruby
+                    buildTool: Rspec
+                    runOnlySelectedTests: false
+                    preCommand: |-
+                      apt-get update
+                      apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev
+                    shell: Bash
+                    resources:
+                      limits:
+                        memory: 8GBi
+                        cpu: "8"
+                    enableTestSplitting: true
+                    testSplitStrategy: ClassTiming
+                  when:
+                    condition: <+stage.pipelineVariables.RunTests_1.spec.execution.steps.RunTests_1.spec.image> != null
+                    stageStatus: Success
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - Unknown
+                        action:
+                          type: Abort
+                  strategy:
+                    repeat:
+                      times: 1
+          sharedPaths:
+            - /var/run
+            - /shared/scan_results/
+          buildIntelligence:
+            enabled: false
+        delegateSelectors:
+          - local-k8s-helm-delegate
