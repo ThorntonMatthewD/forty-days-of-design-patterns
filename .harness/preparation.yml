@@ -41,6 +41,14 @@ pipeline:
                     outputVariables:
                       - name: RUBY_VERSION
         description: ""
+      variables:
+        - name: myNumber
+          type: String
+          default: "1"
+          description: A number between 1 and 4
+          required: true
+          validation:
+            regex: ^[1-4]$
     - stage:
         name: Execute Tests
         identifier: Execute_Tests
